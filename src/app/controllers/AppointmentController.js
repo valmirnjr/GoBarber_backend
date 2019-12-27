@@ -94,11 +94,11 @@ class AppointmentController {
     /**
      * Check if appointment if not with oneself
      */
-    /* if (req.userId === provider_id) {
+    if (req.userId === provider_id) {
       return res.status(400).json({
         error: "You can only schedule an appointment with others barbers",
       });
-    } */
+    }
 
     const appointment = await Appointment.create({
       user_id: req.userId,

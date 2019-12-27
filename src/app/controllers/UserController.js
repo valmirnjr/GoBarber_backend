@@ -1,6 +1,7 @@
 import * as Yup from "yup";
 
 import User from "../models/User";
+import File from "../models/File";
 
 class UserController {
   async store(req, res) {
@@ -69,7 +70,7 @@ class UserController {
     const { id, name, avatar } = await User.findByPk(req.userId, {
       include: [
         {
-          model: "File",
+          model: File,
           as: "avatar",
           attributes: ["id", "path", "url"],
         },

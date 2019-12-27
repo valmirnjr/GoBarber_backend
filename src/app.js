@@ -47,7 +47,9 @@ class App {
         return res.status(500).json(errors);
       }
 
-      return res.status(500).json({ error: "Internal server error." });
+      return res
+        .status(500)
+        .json({ error: "Sorry, we had an internal server error." });
     });
   }
 }
